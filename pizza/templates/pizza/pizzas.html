@@ -1,0 +1,36 @@
+{% extends 'pizza/base.html' %}
+{% block 'body' %}
+{% load widget_tweaks %}
+
+<div class="container">
+	<h1>Order Pizzas</h1>
+	<h2>{{ note }}</h2>
+	
+	<form action="{% url 'pizzas' %}" method="post" novalidate>
+		{% csrf_token %}
+		{{ formset.management_form }}
+
+		{% for form in formset %}
+		{{ form }}
+<!-- 		{% if created_pizza_pk1 %}
+		<a href="{% url 'edit_pizzas' created_pizza_pk1 %}">Edit Your Order</a>
+		{% endif %} -->
+		<br><br>
+		{% endfor %}
+		<input type="submit" value="Order Pizzas">	
+	</form>
+
+</div>
+{% endblock %}
+
+<!-- customize form(pake novalidate) -->
+	<!-- {{ pizzaform.topping1.label_tag }}
+	{{ pizzaform.topping1 }}
+	{{ pizzaform.topping1.errors }}
+	{{ pizzaform.topping2.label_tag }}
+	{{ pizzaform.topping2 }}
+	{{ pizzaform.topping2.errors }}
+	<br><br><br><br>
+	<label for="{{ pizzaform.size.id_for_label }}">Size for your pizza:</label>
+	{{ pizzaform.size }}
+	{{ pizzaform.size.errors }} -->
