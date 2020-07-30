@@ -25,7 +25,7 @@ SECRET_KEY = 'epkh!yjnpvta+=qc(8xax8!qi74tuxrmpozy=#4-j41hcdun&0'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['', '127.0.0.1']
+ALLOWED_HOSTS = ['kimsgarden.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
